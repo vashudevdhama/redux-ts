@@ -18,6 +18,9 @@ const RepositoriesList: React.FC = () => {
         <input type='text' onChange={(e) => setTerm(e.target.value)} />
         <button>Search</button>
       </form>
+      {error && <h3>{error}</h3>}
+      {loading && <h4>Loading...</h4>}
+      {!loading && !error && data.map((item) => <div key={item}>{item}</div>)}
     </div>
   );
 };
